@@ -1,126 +1,122 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Noto+Sans&family=Titan+One&display=swap');
+/* styles.css */
 * {
   margin: 0;
   padding: 0;
 }
+
 html {
   font-size: 62.5%;
 }
 
-.padding-145px {
-  padding-bottom: 14rem;
-}
-.padding-90px {
-  padding-bottom: 9rem;
+body {
+  font-family: "Noto Sans", sans-serif;
 }
 
-/* Стили для заголовка */
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 2.5rem;
-}
-
-/* Стили для логотипа */
-.logo img {
-  height: auto;
-  width: 19rem;
-}
-
-/* Стили для навигации */
-.navigation a {
-  text-decoration: none;
-  color: #131b24;
-  font-family: "Noto Sans";
-  font-size: 2rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  text-transform: capitalize;
-  margin-left: 2rem;
-  text-align: left;
-}
-
-/* Стили для навигации на последней ссылке */
-.navigation a:last-child {
-  margin-right: 0;
-}
-
-/* Эффект при наведении на ссылки */
-.navigation a:hover {
-  text-decoration: underline;
-}
-
-.main-conteiner {
-  width: 111.6rem;
-  height: 100%;
-  margin: 0 auto;
-}
 .main-background {
   height: 100vh;
   width: 100%;
   position: relative;
   background-image: url("img/mainPage.png");
   background-repeat: no-repeat;
-  background-size: cover; /* Растягивание по размерам с сохранением пропорций */
-  background-position: center; /* Выравнивание по центру */
+  background-size: cover;
+  background-position: center;
   z-index: -2;
 }
+
+.main-container {
+  max-width: 111.6rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2.5rem;
+  margin-bottom: 5rem;
+}
+
+.logo img {
+  height: auto;
+  width: 19rem;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: #131b24;
+  font-size: 2rem;
+  margin-left: 2rem;
+}
+
+.navigation a:last-child {
+  margin-right: 0;
+}
+
+.navigation a:hover {
+  text-decoration: underline;
+}
+
 .title-main-box {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
+.svg-bird{
+  position: absolute;
+  width: 3.125vw;
+  left: 28.5vw;
+  top: 5rem;
+}
+/* .svg-bird-btn{
+  position: absolute;
+  width: 3.125vw;
+  
+} */
+.line {
+  height: 4.5rem;
+  background-color: #8FD8D5;
 
-.title-main {
+}
+.title-main, .title-year {
   color: #ce3a42;
-  text-align: center;
-  font-family: "Titan One";
-  font-size: 12rem;
-  font-style: normal;
+  font-family: "Titan One", cursive;
+  font-size: 8.3vw;
   font-weight: 400;
-  line-height: normal;
-  letter-spacing: 0.3rem;
+  letter-spacing: 0.3rem; 
   text-transform: capitalize;
-  align-self: center;
+}
+.title-main{
+  position: relative;
 }
 .title-year {
-  color: #ce3a42;
-  text-align: center;
-  font-family: "Titan One";
   font-size: 8rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  text-align: center;
-  align-self: center;
+  padding-bottom: 3.5rem;
 }
+
 .wraper-p {
-  width: 82rem;
-  align-self: center;
+  width: 55vw;
+  text-align: center;
 }
 
 .main-text {
   color: #000;
-  text-align: center;
-  font-family: "Amatic SC";
+  font-family: "Amatic SC", cursive;
   font-size: 3.2rem;
-  font-style: normal;
   font-weight: 700;
-  line-height: normal;
   letter-spacing: 0.8px;
+  margin-bottom: 12rem;
 }
+
 .main-btn {
   border-radius: 50px;
   background-color: rgba(18, 108, 15, 1);
   color: white;
   padding: 1rem 6.5rem;
-  text-align: center;
-  font-family: "Amatic SC";
+  font-family: "Amatic SC", cursive;
   font-size: 3.5rem;
-  font-style: normal;
   font-weight: 700;
-  align-self: center;
 }
 
 .svg-container {
@@ -133,18 +129,138 @@ html {
   z-index: -1;
 }
 
-.svg-left {
-  width: 50%; /* Половина ширины контейнера для каждой SVG */
+.svg-left, .svg-right {
+  width: 50%;
   height: 100%;
+}
+.svg-left {
   position: relative;
   left: -7rem;
 }
 .svg-right {
-  width: 50%; /* Половина ширины контейнера для каждой SVG */
-  height: 100%; /* Высота будет автоматически подстраиваться */
   position: relative;
   left: 7rem;
 }
+/* Next secion_______________________________________________________________________________________________________*/
+.snow-background{
+  height: 350rem;
+  width: 100%;
+  background-image: url("img/Snow-background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@media screen and (max-width: 768px) {
+  /* Медиа-запрос для устройств с шириной до 768px */
+  .main-container {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .title-main-box {
+    padding: 8rem 0;
+  }
+
+  .title-main {
+    font-size: 8rem;
+  }
+
+  .title-year {
+    font-size: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .wraper-p {
+    width: 100%;
+  }
+
+  .main-text {
+    font-size: 2.5rem;
+  }
+
+  .main-btn {
+    padding: 0.8rem 4rem;
+    font-size: 2.8rem;
+    margin-top: 1.5rem;
+  }
+
+  .svg-container {
+    top: 12rem;
+  }
+
+  .svg-left,
+  .svg-right {
+    width: 40%;
+  }
+
+  .svg-left {
+    left: -5rem;
+  }
+
+  .svg-right {
+    left: 5rem;
+  }
+}
+
+/* Можно добавить еще медиа-запросы для других разрешений */
+@media screen and (max-width: 480px) {
+  /* Медиа-запрос для устройств с шириной до 480px */
+  .title-main {
+    font-size: 6rem;
+  }
+
+  .title-year {
+    font-size: 4rem;
+    padding-bottom: 3rem;
+  }
+
+  .main-text {
+    font-size: 2.2rem;
+  }
+
+  .main-btn {
+    padding: 0.6rem 3.5rem;
+    font-size: 2.4rem;
+    margin-top: 1rem;
+  }
+
+  .svg-container {
+    top: 10rem;
+  }
+
+  .svg-left,
+  .svg-right {
+    width: 35%;
+  }
+
+  .svg-left {
+    left: -4rem;
+  }
+
+  .svg-right {
+    left: 4rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* __________________________________________________________________________________ */
 /* * {
   margin: 0;
