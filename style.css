@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Noto+Sans&family=Titan+One&display=swap');
-/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Andika:wght@400;700&family=Noto+Sans&family=Titan+One&display=swap');/* styles.css */
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box; 
 }
 
 html {
@@ -14,18 +14,16 @@ body {
 }
 
 .main-background {
-  height: 100vh;
+  height: 90rem;
   width: 100%;
-  position: relative;
-  background-image: url("img/mainPage.png");
+  background-image: url("img/mainFrame.svg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
   z-index: -2;
 }
 
 .main-container {
-  max-width: 111.6rem;
+  max-width: 118.5rem;
   margin: 0 auto;
   padding: 0 2rem;
 }
@@ -35,7 +33,7 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-top: 2.5rem;
-  margin-bottom: 5rem;
+  margin-bottom: 6.8rem;
 }
 
 .logo img {
@@ -63,21 +61,20 @@ body {
   flex-direction: column;
   align-items: center;
 }
-.svg-bird{
-  position: absolute;
-  width: 3.125vw;
-  left: 28.5vw;
-  top: 5rem;
-}
-/* .svg-bird-btn{
-  position: absolute;
-  width: 3.125vw;
-  
-} */
+
 .line {
+  position: relative;
   height: 4.5rem;
   background-color: #8FD8D5;
 
+}
+.circle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .title-main, .title-year {
   color: #ce3a42;
@@ -87,17 +84,16 @@ body {
   letter-spacing: 0.3rem; 
   text-transform: capitalize;
 }
-.title-main{
-  position: relative;
-}
+
 .title-year {
-  font-size: 8rem;
-  padding-bottom: 3.5rem;
+  font-size: 5.5vw;
+  padding-bottom: 5rem;
 }
 
 .wraper-p {
   width: 55vw;
   text-align: center;
+  padding-bottom: 2.9rem;
 }
 
 .main-text {
@@ -119,36 +115,150 @@ body {
   font-weight: 700;
 }
 
-.svg-container {
-  display: flex;
-  justify-content: space-between;
-  height: 90vh;
-  width: 100%;
-  position: absolute;
-  top: 20rem;
-  z-index: -1;
-}
 
-.svg-left, .svg-right {
-  width: 50%;
-  height: 100%;
-}
-.svg-left {
-  position: relative;
-  left: -7rem;
-}
-.svg-right {
-  position: relative;
-  left: 7rem;
-}
+
 /* Next secion_______________________________________________________________________________________________________*/
+/* Стили для больших экранов (дефолтные стили) */
 .snow-background{
-  height: 350rem;
+  height: 100%;
   width: 100%;
   background-image: url("img/Snow-background.png");
+  background-size: contain;
+  background-position: center;
+}
+.snow-section-container {
+  max-width: 118.5rem;
+  margin: 0 auto;
+  padding: 3.7rem 2rem 0 2rem;
+}
+
+.second-section-titel {
+  text-align: center;
+  margin-bottom: .6rem;
+  color: #CE3A42;
+  text-align: center;
+  font-family: Titan One;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.svg-container {
+  display: block;
+  margin: 0 auto 7.5rem auto;
+  background-image: url('./svg/titelForSnowSection.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  max-width: 46.5vw;
+  height: 16.5vh
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10rem;
+  
+}
+
+.card {
+  border: 5px solid #876D4C;
+  background: #F0D5AC;
+  padding: 2.5rem 2.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 52rem;
+  height: 53.5rem;
+}
+
+.card h2, .card h3 {
+  margin: 0;
+}
+.first-title-cards-top{
+  color: #000;
+  font-family: 'Andika' ;
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: 0.09rem;
+}
+.second-title-cards-top{
+  color: #000;
+  font-family: 'Andika';
+  font-size: 2.5rem;
+  font-weight: 400;
+  letter-spacing: 0.062rem;
+}
+.icon-svg-for-card {
+  width: 4.5rem;
+  height: 4.5rem; 
+}
+.card-svg-img {
+  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 auto;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  height: 46rem;
+  width: 100%; 
+}
+.conteiner-for-information p{
+  color: #000;
+font-family: 'Andika';
+font-size: 22px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: 0.55px;
+}
+.icon {
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+
+/* Медиа запросы для адаптивности */
+/* Стили для средних экранов (планшеты и небольшие мониторы) */
+@media screen and (max-width: 1024px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Стили для маленьких экранов (мобильные устройства) */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0 5px;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .card {
+    padding: 10px;
+  }
+
+  .second-section-titel {
+    font-size: 24px;
+  }
+
+  .centered-svg {
+    width: 100px;
+    height: 100px;
+  }
+
+  .card-svg {
+    width: 60px;
+    height: 60px;
+  }
 }
 
 @media screen and (max-width: 768px) {
