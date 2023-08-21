@@ -1,0 +1,287 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Andika:wght@400;700&family=Noto+Sans&family=Titan+One&display=swap"); /* styles.css */
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Andika";
+  color: #131b24;
+}
+
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.wraper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.conteiner {
+  max-width: 118.5rem;
+  margin: 0 auto;
+}
+.header__inner {
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+.logo img {
+  width: 19.4rem;
+}
+.header__first-part {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__btn {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 4rem;
+  height: 3rem;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.header__btn span {
+  height: 0.2rem;
+  width: 100%;
+  background-color: #131b24;
+}
+
+.header__arrow-back {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.menu__list {
+  display: flex;
+  gap: 1.9vw;
+}
+.menu__list--link {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.05rem;
+}
+
+.main {
+  flex-grow: 1;
+  background-color: #d9ecd6;
+}
+.fleshmob__title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 6rem;
+  font-weight: 700;
+  letter-spacing: 0.15rem;
+  padding: 0 2rem;
+  margin-bottom: 2.5rem;
+}
+.larvik-title-svg {
+  height: 5.3rem;
+}
+
+.fleshmob__background {
+  background-image: url("img/Frame-danse-for-soMer.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 73rem;
+  width: 100%;
+}
+.information-wraper {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.06rem;
+  padding: 0 2rem;
+  max-width: 86rem;
+}
+.information__line {
+  height: 1px;
+  background: rgba(10, 73, 0, 0.54);
+}
+.information {
+  margin-bottom: 4.5rem;
+}
+.information__card {
+  height: 25rem;
+  border: 1px solid #699463;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+}
+.information__map {
+  border: 1px solid #699463;
+  background: #fff;
+  height: 30rem;
+}
+
+.information__card-info {
+  font-size: 2.2rem;
+  font-weight: 400;
+  letter-spacing: 0.055rem;
+}
+.information__card-info li p {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.information__cards-svg {
+  width: 4rem;
+  height: 4rem;
+}
+
+.line {
+  position: relative;
+  height: 4.5rem;
+  width: 100%;
+}
+.circle {
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.color1 {
+  background-color: #ce3a42;
+}
+
+.color2 {
+  background-color: #ffc64c;
+}
+
+.footer-wrap {
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-around;
+}
+.footer-wrap-info {
+  display: flex;
+  justify-content: space-evenly;
+}
+.footer-p a {
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 1160px) {
+  .fleshmob__background {
+    min-height: 65rem;
+  }
+}
+@media screen and (max-width: 865px) {
+  .fleshmob__background {
+    min-height: 52rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .logo img {
+    width: 15.4rem;
+  }
+  .circle {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .fleshmob__background {
+    min-height: 48rem;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .header__btn {
+    display: flex;
+  }
+  .header__btn,
+  .logo {
+    z-index: 7;
+    position: relative;
+  }
+  .menu__list {
+    position: absolute;
+    background-color: #fff;
+    height: 50vh;
+    padding-top: 15rem;
+    gap: 5rem;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 4;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    border-bottom: solid 0.2rem #699463;
+  }
+  .menu__list.menu__list--active {
+    transform: translateY(0%);
+  }
+  .fleshmob__background {
+    min-height: 34rem;
+  }
+
+  .fleshmob__title {
+    font-size: 4rem;
+  }
+  .information-wraper {
+    font-size: 2rem;
+  }
+  .information__card-info {
+    font-size: 1.8rem;
+  }
+  .footer-p a,
+  .menu__list--item a {
+    font-size: 1.7rem;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .fleshmob__background {
+    min-height: 28rem;
+  }
+  .fleshmob__title {
+    display: flex;
+    gap: 3rem;
+    letter-spacing: 0;
+  }
+  .larvik-title-svg {
+    height: 4.3rem;
+  }
+  .circle {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+}

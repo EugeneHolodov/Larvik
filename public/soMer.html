@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <link rel="stylesheet" href="soMer.css" />
+    <title>Document</title>
+  </head>
+  <body>
+
+    <div class="wraper">
+      <header class="header">
+        <div class="conteiner">
+          <div class="header__inner">
+            <div class="header__first-part">
+              <a href="#" class="logo">
+                <img src="svg/logo.svg" alt="Larvik Kommune Logo" />
+              </a>
+              <nav class="menu">
+                <button class="header__btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </button>
+                <ul class="menu__list">
+                  <li class="menu__list--item">
+                    <a href="#" class="menu__list--link">Sponsorer</a>
+                  </li>
+                  <li class="menu__list--item">
+                    <a href="#" class="menu__list--link">Kontakter</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div>
+              <a class="header__arrow-back" href="index.html" alt="arrow-back">
+                <img src="svg/arrow.svg" alt="Arrow" width="20" height="20" />
+                Tilbake til forsiden
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="main">
+        <div class="line"></div>
+        <div class="conteiner">
+          <section class="fleshmob">
+            <div class="fleshmob__background"></div>
+            <h1 class="fleshmob__title">
+              Flesh mob i senturm
+              <img
+                class="larvik-title-svg"
+                src="svg/title-soMer.svg"
+                alt="larvikkommune"
+              />
+            </h1>
+          </section>
+          <section class="information">
+            <div class="information-wraper">
+              <div class="information__line"></div>
+              <div class="information__text">
+                <p>
+                  Hei! Vi inviterer deg til en flashmob den 24.11<br />
+                  Bli med oss og skap uforglemmelige øyeblikk sammen!
+                </p>
+              </div>
+              <div class="information__card">
+                <p>Hvor og når?</p>
+                <ul class="information__card-info">
+                  <li>
+                    <p>
+                      <svg class="information__cards-svg">
+                        <use xlink:href="./svg/icons.svg#Sted icon2"></use>
+                      </svg>
+                      Tønsberg
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <svg class="information__cards-svg">
+                        <use xlink:href="./svg/icons.svg#Date icon2"></use>
+                      </svg>
+                      24.11.2023
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <svg class="information__cards-svg">
+                        <use xlink:href="./svg/icons.svg#Klokka icon2"></use>
+                      </svg>
+
+                      kl. 17:00
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div class="information__map" id="map"></div>
+            </div>
+          </section>
+        </div>
+        <div class="line"></div>
+      </main>
+
+      <footer class="footer">
+        <hr class="footer-line" />
+        <div class="conteiner">
+          <div class="footer-wrap">
+            <div class="footer-wrap-info">
+              <div class="footer-p">
+                <a href="#">Samarbeid</a>
+              </div>
+              <div class="footer-p">
+                <a href="#">Sponsorer</a>
+              </div>
+              <div class="footer-p">
+                <a href="#">Kontakter</a>
+              </div>
+            </div>
+            <div class="footer-logo">
+              <a href="#" class="logo">
+                <img src="svg/logo.svg" alt="Larvik Kommune Logo" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="soMer.js"></script>
+  </body>
+</html>
