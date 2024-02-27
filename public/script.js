@@ -1,13 +1,241 @@
-//'use strict'
+const repeatingSection = document.querySelector(".repeating-section");
+const allRepeatingSections = document.querySelectorAll(".repeating-section");
+const cardConteinerOrSwiper = repeatingSection.querySelector(
+  ".repeating-section__card-conteiner"
+);
+const cardWrapperOrSwiperWrapper = repeatingSection.querySelector(
+  ".repeating-section__card-wrapper"
+);
+const cards = repeatingSection.querySelectorAll(".repeating-section__card");
 
+const swiperPagination = document.querySelector(".swiper-pagination");
+
+const swiperButtonPrev = document.querySelector(".swiper-button-prev");
+const swiperButtonNext = document.querySelector(".swiper-button-next");
+
+// Function for castom cards color
+function changeSectionsColor(sectionsId, color, linesColor, cardsBorderColor) {
+  const section = document.querySelector(`#${sectionsId}`);
+  const line = section.querySelector(".line");
+  const titlesBackground = section.querySelector(
+    ".repeating-section__title-ivent-svg path"
+  );
+  const cards = section.querySelectorAll(".card");
+  line.style.backgroundColor = linesColor;
+  titlesBackground.style.fill = color;
+  titlesBackground.style.fillOpacity = 1;
+  section.querySelectorAll(".swiper-button").forEach((btn) => {
+    btn.style.color = cardsBorderColor;
+  });
+  cards.forEach((card) => {
+    card.style.backgroundColor = color;
+    card.style.borderColor = cardsBorderColor;
+  });
+}
+
+function addCardsIntoSection(
+  sectionsId,
+  firstCardInfo,
+  secondCardInfo,
+  thirdCardInfo,
+  fourthCardInfo
+) {
+  const section = document.querySelector(`#${sectionsId}`);
+  const cardsCanteiners = section.querySelectorAll(".repeating-section__card");
+  const cardsObj = {
+    0: firstCardInfo,
+    1: secondCardInfo,
+    2: thirdCardInfo,
+    3: fourthCardInfo,
+  };
+
+  cardsCanteiners.forEach((cardsWrapper, index) =>
+    cardsWrapper.insertAdjacentHTML(
+      "afterbegin",
+      `<div class="card">
+  <div class="card__inner">
+    <div class="card__svg" style=" background-image: url('./svg/card${
+      index + 1
+    }-second-section.svg')"></div>
+    <div class="card__inner-wrapper">
+      <div class="card__title">
+        <h4 class="card__title-first">${cardsObj[index][0]}</h4>
+        <h5 class="card__title-second">${cardsObj[index][1]}</h5>
+      </div>
+      <div class="card__info-wrapper">
+        <p class="card__text">
+          <svg class="card__text-svg">
+            <use xlink:href="./svg/icons.svg#Type icon"></use>
+          </svg>
+          ${cardsObj[index][2]}
+        </p>
+      
+        <p class="card__text">
+          <svg class="card__text-svg">
+            <use xlink:href="./svg/icons.svg#Date icon"></use>
+          </svg>
+          ${cardsObj[index][3]}
+        </p>
+        <p class="card__text">
+          <svg class="card__text-svg">
+            <use xlink:href="./svg/icons.svg#Sted icon"></use>
+          </svg>
+            kl. ${cardsObj[index][4]}
+        </p>
+        <p class="card__text">
+          <svg class="card__text-svg">
+            <use xlink:href="./svg/icons.svg#Klokka icon"></use>
+          </svg>
+          ${cardsObj[index][5]}
+        </p>
+      </div>
+    
+    </div>
+  </div>`
+    )
+  );
+}
+const cardsInforArr = [
+  "Navn på en aktivivtet",
+  "Arrangører",
+  "Tønsberg",
+  "Barn og unge",
+  "17:00",
+  "24.11.2023",
+];
+
+addCardsIntoSection(
+  "first-section",
+  cardsInforArr,
+  cardsInforArr,
+  cardsInforArr,
+  cardsInforArr
+);
+changeSectionsColor("first-section", "#F0D5AC", "#8FD8D5", "#876D4C");
+
+addCardsIntoSection(
+  "second-section",
+  cardsInforArr,
+  cardsInforArr,
+  cardsInforArr,
+  cardsInforArr
+);
+changeSectionsColor("second-section", "#C8EED7", "#6CC0A2", "#126C0F");
+
+addCardsIntoSection(
+  "third-section",
+  cardsInforArr,
+  cardsInforArr,
+  cardsInforArr,
+  cardsInforArr
+);
+changeSectionsColor("third-section", "#F7C1C1", "#F7C1C1", "#B54147");
+
+addCardsIntoSection(
+  "fourth-section",
+  cardsInforArr,
+  cardsInforArr,
+  cardsInforArr,
+  cardsInforArr
+);
+changeSectionsColor("fourth-section", "#DFF3CF", "#DFF3CF", "#316D00");
+
+function toggleInactive() {
+  allRepeatingSections.forEach((section) => {
+    const elements = [
+      section.querySelector(".swiper-pagination"),
+      section.querySelector(".swiper-button-prev"),
+      section.querySelector(".swiper-button-next"),
+    ];
+    elements.forEach((element) => {
+      element.classList.toggle("inactive");
+    });
+  });
+}
+function toggleSlidesStyles() {
+  allRepeatingSections.forEach((section) => {
+    section
+      .querySelector(".repeating-section__card-conteiner")
+      .classList.toggle("swiper");
+    section
+      .querySelector(".repeating-section__card-conteiner")
+      .classList.toggle("swiper--inactive");
+
+    section
+      .querySelector(".repeating-section__card-wrapper")
+      .classList.toggle("swiper-wrapper");
+    section
+      .querySelector(".repeating-section__card-wrapper")
+      .classList.toggle("swiper-wrapper--inactive");
+
+    section.querySelectorAll(".repeating-section__card").forEach((element) => {
+      element.classList.toggle("swiper-slide");
+    });
+  });
+}
+
+let swipers = []; 
+
+function initSwiper() {
+  toggleInactive();
+  toggleSlidesStyles();
+
+  const swiperElements = document.querySelectorAll('.swiper');
+  swiperElements.forEach(element => {
+    const swiper = new Swiper(element, {
+      loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      dynamicBullets: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+
+    effect: "flip",
+    flipEffect: {
+      slideShadows: true,
+    },
+    });
+    swipers.push(swiper);
+  });
+}
+function destroySwiper() {
+  toggleInactive();
+  toggleSlidesStyles();
+  
+  swipers.forEach(swiper => swiper.destroy(true, true));
+  swipers = [];
+}
+let previousWidth = window.innerWidth;
+
+function handleWidthChange() {
+  let currentWidth = window.innerWidth;
+
+  if (previousWidth > 650 && currentWidth <= 650) {
+    initSwiper();
+  } else if (previousWidth <= 650 && currentWidth > 650) {
+    destroySwiper();
+  }
+
+  previousWidth = currentWidth;
+}
+
+if (window.innerWidth <= 650) {
+  initSwiper();
+}
+
+window.addEventListener("resize", handleWidthChange);
 
 const renderCircles = () => {
-  // Удалите все предыдущие круги
+
   document.querySelectorAll(".circle").forEach((circle) => circle.remove());
 
   const line = document.querySelectorAll(".line");
   line.forEach(function (e, index) {
-    // Если ширина line больше или равна ширине окна, только тогда рендерим шарики
+
     if (e.offsetWidth >= window.innerWidth) {
       const totalCircles = 20; // Например, вы хотите 10 шариков на экране
       const spacingPercent = 100 / totalCircles;
@@ -62,260 +290,9 @@ const toggleCircleColors = () => {
 // Запустите функцию каждую секунду
 setInterval(toggleCircleColors, 1000);
 
-let containers = document.querySelectorAll(".snow-container");
-
-let dimensions = {};
-
-function updateDimensions() {
-  containers.forEach((container, index) => {
-    dimensions[index] = {
-      width: container.offsetWidth,
-      height: container.offsetHeight,
-    };
-  });
-}
-
-function createSnowflakeForContainer(container, index) {
-  const snowflake = document.createElement("div");
-  snowflake.classList.add("snowflake");
-  snowflake.style.left = `${Math.random() * dimensions[index].width}px`;
-  snowflake.style.top = `${-20}px`;
-  container.appendChild(snowflake);
-
-  let speed = 0.5 + Math.random() * 2;
-  let rotation = 0;
-  let rotationSpeed = (Math.random() - 0.5) * 0.1;
-
-  function animate() {
-    if (snowflake.offsetTop < dimensions[index].height) {
-      snowflake.style.top = `${snowflake.offsetTop + speed}px`;
-      rotation += rotationSpeed;
-      snowflake.style.transform = `rotate(${rotation}rad)`;
-      requestAnimationFrame(animate);
-    } else {
-      container.removeChild(snowflake);
-    }
-  }
-
-  animate();
-}
-
-function createSnowflake() {
-  containers.forEach((container, index) => {
-    createSnowflakeForContainer(container, index);
-  });
-}
-
-updateDimensions();
-window.addEventListener("resize", updateDimensions);
-if (window.innerWidth <= 650) {
-  setInterval(createSnowflake, 500);
-} else {
-  setInterval(createSnowflake, 200);
-}
-
-//_________________________________________________________________________
-let currentSlide = {};
-
-function getSectionFromChild(child) {
-  while (child && !child.matches(".snow-section-container")) {
-    child = child.parentElement;
-  }
-  return child;
-}
-
-function wrapCards(section) {
-  if (section.dataset.sliderWrapped === "true") return;
-
-  const cards = section.querySelectorAll(".card");
-  const outerContainer = document.createElement("div");
-  const innerContainer = document.createElement("div");
-
-  outerContainer.className = "slider-wrapper";
-  innerContainer.className = "slider";
-
-  outerContainer.appendChild(innerContainer);
-  cards.forEach((card) => {
-    innerContainer.appendChild(card);
-  });
-
-  section.appendChild(outerContainer);
-  createDots(section);
-
-  section.dataset.sliderWrapped = "true";
-}
-
-function unwrapCards(section) {
-  if (section.dataset.sliderWrapped !== "true") return;
-
-  const sliderWrapper = section.querySelector(".slider-wrapper");
-  const cards = section.querySelectorAll(".card");
-  const oldPlaceForCards = section.querySelector(".grid-container");
-
-  cards.forEach((card) => {
-    oldPlaceForCards.appendChild(card);
-  });
-
-  section.removeChild(sliderWrapper);
-  const dotsWrapper = section.querySelector(".dots-wrapper");
-  if (dotsWrapper) section.removeChild(dotsWrapper);
-
-  section.dataset.sliderWrapped = "false";
-}
-
-function handleResize() {
-  const sections = document.querySelectorAll(".snow-section-container");
-  sections.forEach((section) => {
-    if (window.innerWidth < 650) {
-      wrapCards(section);
-    } else {
-      unwrapCards(section);
-    }
-  });
-}
-
-function getSectionKey(section) {
-  return section.dataset.sectionKey || section.className;
-}
-
-function showSlide(section, slideIndex) {
-  const sectionKey = getSectionKey(section);
-  const totalSlides = section.querySelectorAll(".card").length;
-
-  if (slideIndex < 0) {
-    slideIndex = totalSlides - 1;
-  } else if (slideIndex >= totalSlides) {
-    slideIndex = 0;
-  }
-
-  currentSlide[sectionKey] = slideIndex;
-  updateSlidePosition(section);
-}
-
-function createDots(section) {
-  const slider = section.querySelector(".slider");
-  const dotsWrapper = document.createElement("div");
-
-  dotsWrapper.className = "dots-wrapper";
-
-  const totalSlides = slider.children.length;
-  dotsWrapper.innerHTML = "";
-
-  for (let i = 0; i < totalSlides; i++) {
-    const dot = document.createElement("span");
-    dot.className = "dot";
-    if (i === currentSlide[getSectionKey(section)]) {
-      dot.classList.add("active");
-    }
-
-    dot.addEventListener("click", function () {
-      showSlide(section, i);
-    });
-
-    dotsWrapper.appendChild(dot);
-  }
-  section.appendChild(dotsWrapper);
-}
-
-function updateDots(section) {
-  const dots = section.querySelectorAll(".dot");
-  dots.forEach((dot, index) => {
-    if (index === currentSlide[getSectionKey(section)]) {
-      dot.classList.add("active");
-    } else {
-      dot.classList.remove("active");
-    }
-  });
-}
-
-function updateSlidePosition(section) {
-  const slider = section.querySelector(".slider");
-  const offset = -currentSlide[getSectionKey(section)] * 100;
-  slider.style.transform = `translateX(${offset}%)`;
-
-  updateDots(section);
-}
-
-function handleNextButtonClick(event) {
-  if (window.innerWidth > 650) return;
-  const section = getSectionFromChild(event.target);
-  moveSlideForward(section);
-}
-
-function handlePrevButtonClick(event) {
-  if (window.innerWidth > 650) return;
-  const section = getSectionFromChild(event.target);
-  moveSlideBackward(section);
-}
-function moveSlideForward(section) {
-  const sectionKey = getSectionKey(section);
-  const newSlideIndex = (currentSlide[sectionKey] || 0) + 1;
-  showSlide(section, newSlideIndex);
-}
-
-function moveSlideBackward(section) {
-  const sectionKey = getSectionKey(section);
-  const newSlideIndex = (currentSlide[sectionKey] || 0) - 1;
-  showSlide(section, newSlideIndex);
-}
-function initSliderEvents() {
-  document.querySelectorAll(".nextBtn").forEach((btn) => {
-    btn.addEventListener("click", handleNextButtonClick);
-  });
-
-  document.querySelectorAll(".prevBtn").forEach((btn) => {
-    btn.addEventListener("click", handlePrevButtonClick);
-  });
-}
-
-function addSwipeFunctionalityForSliders() {
-  const sliders = document.querySelectorAll(".slider-wrapper");
-
-  sliders.forEach((slider) => {
-    let touchStartX = null;
-
-    slider.addEventListener("touchstart", (event) => {
-      touchStartX = event.changedTouches[0].screenX;
-    });
-
-    slider.addEventListener("touchend", (event) => {
-      if (window.innerWidth > 650) return;
-      const touchEndX = event.changedTouches[0].screenX;
-      handleSwipe(slider, touchStartX, touchEndX);
-    });
-  });
-}
-
-function handleSwipe(slider, touchStartX, touchEndX) {
-  const section = getSectionFromChild(slider);
-  const sectionKey = getSectionKey(section);
-  let newSlideIndex = currentSlide[sectionKey] || 0;
-
-  if (touchEndX - touchStartX > 50) {
-    newSlideIndex--;
-  } else if (touchStartX - touchEndX > 50) {
-    newSlideIndex++;
-  }
-
-  showSlide(section, newSlideIndex);
-}
-
-window.addEventListener("resize", function () {
-  handleResize();
-  addSwipeFunctionalityForSliders();
-  initSliderEvents();
-});
-
-window.addEventListener("DOMContentLoaded", function () {
-  initSliderEvents();
-  handleResize();
-  addSwipeFunctionalityForSliders();
-});
-
-
 const menuBtn = document.querySelector(".header__btn");
 const menu = document.querySelector(".menu__list");
 
 menuBtn.addEventListener("click", () =>
-  menu.classList.toggle("menu__list--active") 
+  menu.classList.toggle("menu__list--active")
 );

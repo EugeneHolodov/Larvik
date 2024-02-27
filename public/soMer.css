@@ -37,9 +37,23 @@ a {
 .conteiner {
   max-width: 118.5rem;
   margin: 0 auto;
+  padding: 0 2rem;
 }
+.canvasStyle {
+  left: 0;
+  top: 0;
+  position: absolute;
+  width: 'offsetWidth';
+  height: 'offsetHeight';
+  z-index: -5;
+}
+.repeating-section {
+  position: relative;
+  padding-bottom: 11rem;
+}
+
 .header__inner {
-  padding: 2.5rem 2rem;
+  padding: 3rem 0;
   display: flex;
   flex-direction: column;
   gap: 3.5rem;
@@ -87,6 +101,8 @@ a {
 
 .main {
   flex-grow: 1;
+}
+.main-second-page {
   background-color: #d9ecd6;
 }
 .fleshmob__title {
@@ -102,14 +118,240 @@ a {
 .larvik-title-svg {
   height: 5.3rem;
 }
+/* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+.wrapper__wellkome {
+  height: 89.7rem;
+  position: relative;
+}
+.main__background {
+  position: absolute;
+  top: 4rem;
+  width: 100%;
+  height: 100%;
+  background-image: url("img/Main-background.svg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  z-index: -1;
+}
+.welcome-section__inner {
+  margin: 2.9rem auto 13rem auto;
+  text-align: center;
+}
+.welcome-section__title-ivent,
+.welcome-section__title-year {
+  color: #ce3a42;
+  font-family: "Titan One", cursive;
+  font-size: 12rem;
+  font-weight: 400;
+  letter-spacing: 0.3rem;
+}
+.welcome-section__title-ivent {
+  position: relative;
+}
+.welcome-section__bird-titles {
+  position: absolute;
+  left: 26rem;
+  top: -1.6rem;
+}
+.welcome-section__title-year {
+  font-size: 8rem;
+  margin-bottom: 5.7rem;
+}
+.welcome-section__description {
+  width: 70%;
+  font-family: "Amatic SC", cursive;
+  font-size: 3.2rem;
+  font-weight: 700;
+  letter-spacing: 0.08rem;
+  margin: 0 auto 14.7rem auto;
+}
+.welcome-section__btn {
+  position: relative;
+  border-radius: 50px;
+  background-color: rgba(18, 108, 15, 1);
+  color: white;
+  padding: 1rem 6.5rem;
+  font-family: "Amatic SC", cursive;
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+.welcome-section__bird-btns {
+  position: absolute;
+  top: -4rem;
+  right: 1.2rem;
+}
+
+.swiper {
+  text-align: center;
+  width: 100%;
+  height: 470px;
+}
+
+.inactive {
+  display: none;
+}
+.color1 {
+  background-color: #ce3a42;
+}
+.color2 {
+  background-color: #2a9f75;
+}
+.color3 {
+  background-color: #faffbc;
+}
+.color4 {
+  background-color: #ce3a42;
+}
+.color5 {
+  background-color: #467d19;
+}
+.color6 {
+  background-color: #f7c1c1;
+}
+
+.repeating-section__week-title {
+  text-align: center;
+  color: #ce3a42;
+  font-family: "Titan One";
+  font-size: 6rem;
+  font-weight: 400;
+  margin-top: 4.7rem;
+}
+.repeating-section__title-ivent-wraper {
+  text-align: center;
+  justify-content: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 70rem;
+  margin: 4.5rem auto 9.5rem auto;
+}
+.repeating-section__title-ivent-svg {
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+.repeating-section__title-ivent-svg path {
+  opacity: 0.7;
+}
+.repeating-section__title-ivent {
+  font-family: "Amatic SC";
+  font-size: 7rem;
+  font-weight: 400;
+  letter-spacing: 0.175rem;
+}
+
+/* .repeating-section__card {
+  display: inline-flex;
+} */
+
+.swiper-wrapper--inactive {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 9rem 8.2rem;
+}
+
+.card {
+  width: 53.5rem;
+  min-height: 55rem;
+  max-height: min-content;
+  border: 5px solid;
+}
+.card__inner {
+  position: relative;
+  z-index: 0;
+}
+.card__inner-wrapper {
+  padding: 1.6rem 4.8rem 1.8rem 4.8rem;
+}
+.card__title {
+  margin-bottom: 22.8rem;
+}
+.card__title-first {
+  font-family: "Andika";
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: 0.09rem;
+}
+.card__title-second {
+  font-family: "Andika";
+  font-size: 2.5rem;
+  font-weight: 400;
+  letter-spacing: 0.062rem;
+}
+.card__text-svg {
+  width: 5rem;
+  height: 5rem;
+}
+.card__svg {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 41rem;
+  width: 100%;
+  z-index: -1;
+}
+.card__info-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  font-family: "Andika";
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 0.055rem;
+}
+.card__info-wrapper p:nth-last-child(n + 3) {
+  border-bottom: 1px solid rgba(18, 108, 15, 1);
+}
+
+.card__info-wrapper p:nth-child(1),
+.card__info-wrapper p:nth-child(2) {
+  grid-column: span 2;
+}
+.card__text {
+  display: flex;
+  align-items: center;
+  padding: 0.9rem 0;
+}
+.card__text-svg {
+  margin-right: 1.4rem;
+}
+.swiper-slide-active {
+  display: flex;
+  justify-content: center;
+  text-align: left;
+}
+.swiper-pagination {
+  margin-bottom: 1.5rem;
+}
+.swiper-pagination-bullet {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.swiper-pagination__first .swiper-pagination-bullet {
+  background-color: #876d4c;
+}
+.swiper-pagination__second .swiper-pagination-bullet {
+  background-color: #126c0f;
+}
+.swiper-pagination__third .swiper-pagination-bullet {
+  background-color: #b54147;
+}
+.swiper-pagination__fourth .swiper-pagination-bullet {
+  background-color: #316d00;
+}
+/* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
 
 .fleshmob__background {
   background-image: url("img/Frame-danse-for-soMer.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  min-height: 73rem;
-  width: 100%;
+  margin: 0 auto;
+  min-height: 68rem;
+  width: 120rem;
 }
 .information-wraper {
   display: flex;
@@ -172,11 +414,11 @@ a {
   top: 50%;
   transform: translateY(-50%);
 }
-.color1 {
+.color7 {
   background-color: #ce3a42;
 }
 
-.color2 {
+.color8 {
   background-color: #ffc64c;
 }
 
@@ -194,32 +436,367 @@ a {
 .footer-p a {
   font-size: 2rem;
 }
+@media screen and (min-width: 1450px) {
+  .footer-p a,
+  .menu__list--item a {
+    font-size: 2.5rem;
+  }
+  .wrapper__wellkome {
+    height: 100vh;
+    min-height: 95rem;
+  }
+  .main__background {
+    top: 0;
+  }
+  .welcome-section__title-ivent {
+    font-size: 13.5rem;
+  }
+  .welcome-section__bird-titles {
+    left: 23rem;
+  }
+  .welcome-section__title-year {
+    font-size: 9rem;
+  }
+  .welcome-section__description {
+    width: 70%;
+    font-size: 4.2rem;
+  }
+  .welcome-section__btn {
+    padding: 2rem 8.5rem;
+    font-size: 4.5rem;
+  }
+  .circle {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .repeating-section__week-title {
+    font-size: 7rem;
+  }
+}
+@media screen and (min-width: 1700px) {
+  .logo img {
+    width: 23.5rem;
+  }
+  .footer-p a,
+  .menu__list--item a {
+    font-size: 3rem;
+  }
+  .wrapper__wellkome {
+    min-height: 110rem;
+  }
+  .welcome-section__title-ivent {
+    font-size: 15rem;
+  }
+  .welcome-section__bird-titles {
+    width: 7rem;
+    height: 7rem;
+    left: 18rem;
+    top: -3.3rem;
+  }
+  .welcome-section__title-year {
+    font-size: 10rem;
+  }
+  .welcome-section__description {
+    width: 85%;
+    font-size: 5.2rem;
+  }
+  .welcome-section__bird-btns {
+    top: -6rem;
+  }
+  .welcome-section__bird-btns {
+    width: 7rem;
+    height: 7rem;
+  }
+  .line {
+    height: 5rem;
+  }
+  .circle {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+}
+@media screen and (min-width: 1900px) {
+  .logo img {
+    width: 25rem;
+  }
+  .wrapper__wellkome {
+    min-height: 125rem;
+  }
+  .repeating-section__week-title {
+    font-size: 9rem;
+  }
+  .line {
+    height: 5.5rem;
+  }
+  .repeating-section__title-ivent-wraper {
+    width: 91rem;
+    margin: 8.5rem auto 11.5rem auto;
+  }
+  .repeating-section__title-ivent {
+    font-size: 9rem;
+  }
+}
+@media screen and (min-width: 2201px) {
+  .logo img {
+    width: 28rem;
+  }
+  .footer-p a,
+  .menu__list--item a {
+    font-size: 3.5rem;
+  }
+  .wrapper__wellkome {
+    min-height: 145rem;
+  }
+  .welcome-section__inner {
+    margin-top: 19rem;
+  }
+  .welcome-section__btn {
+    border-radius: 150px;
+    padding: 3rem 10.5rem;
+    font-size: 5.5rem;
+  }
+  .welcome-section__bird-btns {
+    right: 2.2rem;
+  }
+  .line {
+    height: 6rem;
+  }
+  .circle {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .welcome-section__description {
+    width: 60%;
+  }
+  .welcome-section__description {
+    margin-bottom: 12rem;
+  }
+}
+
+@media screen and (max-width: 1320px) {
+  .main__background {
+    background-size: contain;
+  }
+  .welcome-section__description {
+    width: 55%;
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  .wrapper__wellkome {
+    height: 100vh;
+    min-height: 80rem;
+  }
+  .welcome-section__title-ivent {
+    font-size: 10rem;
+  }
+  .welcome-section__bird-titles {
+    left: 31rem;
+    top: -2rem;
+  }
+  .welcome-section__title-year {
+    font-size: 7rem;
+  }
+  .welcome-section__description {
+    font-size: 3rem;
+  }
+  .repeating-section__week-title {
+    font-size: 5.5rem;
+  }
+  .repeating-section__title-ivent {
+    font-size: 6rem;
+  }
+  .card {
+    width: 47.5rem;
+    min-height: 45rem;
+  }
+  .card__svg {
+    height: 38rem;
+  }
+  .card__title {
+    margin-bottom: 18.8rem;
+  }
+  .card__title-first {
+    font-size: 3rem;
+  }
+  .card__title-second {
+    font-size: 2rem;
+  }
+  .swiper-wrapper--inactive {
+    grid-gap: 4rem 0;
+    justify-items: center;
+  }
+}
 
 @media screen and (max-width: 1160px) {
   .fleshmob__background {
-    min-height: 65rem;
+    min-height: 58rem;
+    width: 100%;
+    margin: 0;
   }
 }
-@media screen and (max-width: 865px) {
+@media screen and (max-width: 1060px) {
+  .main__background {
+    top: 13rem;
+  }
+  .welcome-section__title-ivent {
+    font-size: 8.5rem;
+  }
+  .welcome-section__bird-titles {
+    left: 27.5rem;
+    top: -2.4rem;
+  }
+  .welcome-section__title-year {
+    font-size: 6rem;
+  }
+  .repeating-section__title-ivent-wraper {
+    width: 58rem;
+    margin-bottom: 8.5rem;
+  }
+  .repeating-section__title-ivent {
+    font-size: 5.5rem;
+  }
+  .swiper-wrapper--inactive {
+    grid-gap: 4rem;
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (max-width: 945px) {
   .fleshmob__background {
-    min-height: 52rem;
+    min-height: 45rem;
+  }
+  .wrapper__wellkome {
+    min-height: 74rem;
+  }
+  .main__background {
+    top: 18rem;
+  }
+  .welcome-section__title-ivent {
+    font-size: 7.5rem;
+  }
+  .welcome-section__title-year {
+    font-size: 5rem;
+  }
+  .welcome-section__description {
+    font-size: 2.5rem;
+  }
+  .welcome-section__btn {
+    padding: 0.7rem 4.5rem;
+    font-size: 3rem;
+  }
+  .welcome-section__bird-btns,
+  .welcome-section__bird-titles {
+    width: 3.2rem;
+  }
+  .welcome-section__bird-titles {
+    left: 24.5rem;
+    top: -1.4rem;
+  }
+  .welcome-section__bird-btns {
+    top: -2.9rem;
+    right: 1.2rem;
+  }
+  .line {
+    height: 3.8rem;
+  }
+  .repeating-section__week-title {
+    font-size: 4.5rem;
+  }
+  .repeating-section__title-ivent-wraper {
+    width: 43rem;
+  }
+  .repeating-section__title-ivent {
+    font-size: 4rem;
   }
 }
+
+
 
 @media screen and (max-width: 768px) {
   .logo img {
     width: 15.4rem;
+  }
+  .wrapper__wellkome {
+    min-height: 65rem;
+  }
+  .main__background {
+    background-image: url(img/Frame-for-mobile2.svg);
+    background-size: cover;
+    top: 4rem;
+  }
+  .welcome-section__inner {
+    margin-top: 0;
+  }
+  .welcome-section__bird-btns,
+  .welcome-section__bird-titles {
+    width: 2.5rem;
+  }
+  .welcome-section__bird-titles {
+    left: 20.5rem;
+    top: -1.2rem;
+  }
+  .welcome-section__bird-btns {
+    top: -2.3rem;
+  }
+  .welcome-section__description {
+    font-size: 2rem;
+    margin-bottom: 6rem;
+  }
+  .welcome-section__title-ivent {
+    font-size: 5.8rem;
+  }
+  .welcome-section__title-year {
+    font-size: 4rem;
+  }
+  .welcome-section__btn {
+    font-size: 2.5rem;
+  }
+  .repeating-section__week-title {
+    font-size: 4rem;
+    margin-top: 3rem;
+  }
+  .repeating-section__title-ivent {
+    font-size: 3.5rem;
+  }
+  .repeating-section__title-ivent-wraper {
+    width: 39rem;
+    margin-bottom: 7.5rem;
+  }
+  .card {
+    width: 41.5rem;
+    min-height: 38rem;
+  }
+  .card__inner-wrapper {
+    padding: 1.4rem 2.8rem;
+  }
+  .card__title {
+    margin-bottom: 15.8rem;
+  }
+  .card__title-first {
+    font-size: 2.5rem;
+  }
+  .card__title-second {
+    font-size: 1.8rem;
+  }
+  .card__info-wrapper {
+    font-size: 1.8rem;
+  }
+  .card__text {
+    padding: 0;
   }
   .circle {
     width: 1.5rem;
     height: 1.5rem;
   }
   .fleshmob__background {
-    min-height: 48rem;
+    min-height: 40rem;
   }
 }
 
-@media screen and (max-width: 660px) {
+@media screen and (max-width: 650px) {
   .header__btn {
     display: flex;
   }
@@ -266,9 +843,133 @@ a {
   .menu__list--item a {
     font-size: 1.7rem;
   }
+  .swiper {
+    height: 53rem;
+  }
+  .card {
+    width: 70%;
+    height: 45rem;
+    min-height: min-content;
+  }
+  .card__title {
+    margin-bottom: 18.8rem;
+  }
+  .repeating-section {
+    padding-bottom: 8rem;
+  }
+  .swiper-button {
+    top: 24rem;
+  }
+}
+@media screen and (max-width: 580px) {
+  .wrapper__wellkome {
+    min-height: 58rem;
+  }
+  .main__background {
+    background-image: url(img/Frame-for-mobile.svg);
+    background-size: contain;
+    background-position: bottom center;
+    top: 0;
+  }
+  .welcome-section__title-ivent {
+    font-size: 5rem;
+  }
+  .welcome-section__title-year {
+    font-size: 3.5rem;
+  }
+  .welcome-section__description {
+    font-size: 1.8rem;
+    margin-bottom: 10rem;
+  }
+  .welcome-section__btn {
+    padding: 0.5rem 4rem;
+    font-size: 2rem;
+  }
+  .line {
+    height: 3rem;
+  }
+  .repeating-section {
+    padding-bottom: 3rem;
+  }
+  .swiper {
+    height: 44rem;
+  }
+  .card {
+    width: 33rem;
+    height: 36rem;
+  }
+  .card__svg {
+    height: 25rem;
+  }
+  .card__title-first {
+    font-size: 2rem;
+  }
+  .card__title-second {
+    font-size: 1.5rem;
+  }
+  .card__info-wrapper {
+    font-size: 1.5rem;
+  }
+  .card__text-svg {
+    width: 4rem;
+    height: 4rem;
+    margin-right: 0.8rem;
+  }
+  .card__title {
+    margin-bottom: 14rem;
+  }
+  .swiper-button {
+    top: 18.5rem;
+  }
+  :root {
+    --swiper-navigation-size: 3.5rem;
+  }
+}
+@media screen and (max-width: 510px) {
+  .card {
+    width: 30rem;
+    border: 0.4rem solid;
+  }
+  .swiper-pagination-bullet {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
 }
 
 @media screen and (max-width: 460px) {
+  .header__btn {
+    width: 3.5rem;
+    height: 2.5rem;
+  }
+  .wrapper__wellkome {
+    min-height: 70rem;
+  }
+  .welcome-section__title-ivent {
+    font-size: 3.8rem;
+  }
+  .welcome-section__title-year {
+    font-size: 3rem;
+  }
+  .welcome-section__bird-titles {
+    left: 5.8rem;
+    top: -1.5rem;
+  }
+  .welcome-section__description {
+    width: 65%;
+    font-size: 2rem;
+  }
+  .repeating-section__week-title {
+    font-size: 3rem;
+    margin-top: 2.5rem;
+  }
+  .repeating-section__title-ivent-wraper {
+    width: 28rem;
+    margin-top: 3.5rem;
+    margin-bottom: 5.5rem;
+  }
+  .repeating-section__title-ivent {
+    font-size: 2.5rem;
+  }
   .fleshmob__background {
     min-height: 28rem;
   }
@@ -283,5 +984,99 @@ a {
   .circle {
     width: 1.1rem;
     height: 1.1rem;
+  }
+  .swiper {
+    height: 41rem;
+  }
+  .card {
+    width: 70%;
+    height: 33rem;
+  }
+  .card__inner-wrapper {
+    padding: 0.6rem 1rem;
+  }
+  .card__title {
+    margin-bottom: 12rem;
+  }
+  .card__title-first {
+    font-size: 1.6rem;
+  }
+  .title-second {
+    font-size: 1.2rem;
+  }
+  .card__info-wrapper {
+    font-size: 1.2rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
+  .card__text-svg {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-right: 0.4rem;
+  }
+  .card__info-wrapper p:nth-child(1),
+  .card__info-wrapper p:nth-child(2) {
+    grid-column: span 1;
+  }
+  .card__info-wrapper p:nth-last-child(2) {
+    border-bottom: 1px solid rgba(18, 108, 15, 1);
+  }
+  :root {
+    --swiper-navigation-size: 3rem;
+  }
+}
+@media screen and (max-width: 365px) {
+  .welcome-section__title-ivent {
+    font-size: 3.3rem;
+  }
+  .card {
+    height: 31rem;
+    border: 0.3rem solid;
+  }
+  .card__title {
+    margin-bottom: 10rem;
+  }
+  .card__title-first {
+    font-size: 1.4rem;
+  }
+  .swiper {
+    height: 38.5rem;
+  }
+  .swiper-button {
+    top: 15.5rem;
+  }
+}
+@media screen and (max-width: 315px) {
+  .welcome-section__title-ivent {
+    font-size: 2.85rem;
+  }
+  .repeating-section__title-ivent {
+    font-size: 2rem;
+  }
+  .repeating-section__title-ivent-wraper {
+    width: 23rem;
+    margin-top: 2.5rem;
+    margin-bottom: 4.5rem;
+  }
+  .welcome-section__title-year {
+    font-size: 2rem;
+  }
+  .card {
+    height: 29rem;
+  }
+  .card__title {
+    margin-bottom: 8rem;
+  }
+  .card__title-first {
+    font-size: 1.1rem;
+  }
+  .title-second {
+    font-size: 0.5rem;
+  }
+  :root {
+    --swiper-navigation-size: 2rem;
+  }
+  .swiper {
+    height: 36.5rem;
   }
 }

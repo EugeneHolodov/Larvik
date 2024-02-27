@@ -4,7 +4,7 @@ const renderCircles = () => {
 
   const line = document.querySelectorAll(".line");
 
-  line.forEach(function (e, index) {
+  line.forEach(function (e) {
     // Если ширина line больше или равна ширине окна, только тогда рендерим шарики
     if (e.offsetWidth >= window.innerWidth) {
       const totalCircles = 20; // Например, вы хотите 10 шариков на экране
@@ -13,7 +13,7 @@ const renderCircles = () => {
         const circle = document.createElement("div");
         circle.classList.add("circle");
 
-        circle.classList.add(i % 2 === 0 ? "color1" : "color2");
+        circle.classList.add(i % 2 === 0 ? "color7" : "color8");
 
         circle.style.left = i * spacingPercent + "%"; // Задаем позицию в процентах
         e.appendChild(circle);
@@ -28,11 +28,10 @@ renderCircles();
 // И вызывайте функцию при изменении размера окна
 window.addEventListener("resize", renderCircles);
 
-// Функция для переключения цветов
 const toggleCircleColors = () => {
   const colorMapping = {
-    color1: "color2",
-    color2: "color1",
+    color7: "color8",
+    color8: "color7",
   };
 
   document.querySelectorAll(".circle").forEach((circle) => {
@@ -49,22 +48,21 @@ const toggleCircleColors = () => {
 // Запустить функцию каждую секунду
 setInterval(toggleCircleColors, 1000);
 
-
-
-const map = L.map("map").setView([59.0529105,10.0314226], 13);
+const map = L.map("map").setView([59.0529105, 10.0314226], 13);
 
 L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
   attribution:
     '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 }).addTo(map);
 
-L.marker([59.0529105,10.0314226])
+L.marker([59.0529105, 10.0314226])
   .addTo(map)
   .bindPopup("A pretty CSS3 popup.<br> Easily customizable.")
   .openPopup();
 
+const menuBtn = document.querySelector(".header__btn");
+const menu = document.querySelector(".menu__list");
 
-const menuBtn = document.querySelector('.header__btn')
-const menu = document.querySelector('.menu__list')
-
-menuBtn.addEventListener('click', () => menu.classList.toggle('menu__list--active'))
+menuBtn.addEventListener("click", () =>
+  menu.classList.toggle("menu__list--active")
+);
